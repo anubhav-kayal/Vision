@@ -30,7 +30,7 @@ The authority level is an enum today so invalid values fail early, while the ord
 ## Replacement boundaries
 
 - A retrieval interface should return chunks plus scores and provenance; storage may start local and later move to PostgreSQL/pgvector.
-- A model-provider interface should accept a bounded context and return a validated `GroundedAnswer`.
+- `backend.app.grounded_answering.ModelProvider` accepts a bounded context and returns JSON that is validated into `GroundedAnswer`; provider-specific SDK code remains outside this boundary.
 - Evaluation must record configuration and distinguish deterministic metrics from model-graded metrics.
 
 The Day 2 ingestion boundary is `ingestion.pdf_parser.parse_pdf`, which returns page-preserving normalized text, and `ingestion.chunking`, which exposes fixed-size and section-aware strategies. Day 3 adds `ingestion.retrieval.TfidfIndex`, a deterministic local sparse-vector baseline that returns ranked chunks with provenance. It is deliberately not a semantic embedding model yet. FastAPI is not introduced because there is no useful HTTP contract yet. Pydantic is used for the domain boundary and pytest for executable checks.
@@ -45,4 +45,5 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 - Authority precedence is represented but not enforced.
 - Retrieval, embedding, and provider interfaces have not been implemented.
 - The current retrieval baseline has no asset-identity filter, dense embeddings, reranker, or hybrid score.
+- Grounded answer validation rejects malformed output and citations that do not match retrieved chunks; it does not yet verify every natural-language claim automatically.
 - Dates and document source validation will need tighter rules once real inputs arrive.
