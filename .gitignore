@@ -12,3 +12,4 @@ build/
 .env
 evaluation/results/
 sample_data/raw/
+sample_data/parsed/*.full.json
