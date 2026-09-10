@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "retrieval-001",
+    "query": "What are the two basic compressor types?",
+    "expected_printed_pages": ["5"],
+    "expected_section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+    "notes": "Straightforward equipment concept lookup."
+  },
+  {
+    "case_id": "retrieval-002",
+    "query": "What are the advantages and disadvantages of lubricant-free rotary screw air compressors?",
+    "expected_printed_pages": ["47"],
+    "expected_section": "7 - PROVEN OPPORTUNITIES AT THE COMPONENT LEVEL",
+    "notes": "Component-level comparison."
+  },
+  {
+    "case_id": "retrieval-003",
+    "query": "What safety steps should be taken before servicing a compressed air system?",
+    "expected_printed_pages": ["51", "52"],
+    "expected_section": "8 - MAINTENANCE OF COMPRESSED AIR SYSTEMS",
+    "notes": "Safety-oriented maintenance lookup."
+  },
+  {
+    "case_id": "retrieval-004",
+    "query": "How can compressed air leaks be detected?",
+    "expected_printed_pages": ["29"],
+    "expected_section": "3 - COMPRESSED AIR SYSTEM LEAKS",
+    "notes": "Troubleshooting and inspection lookup."
+  },
+  {
+    "case_id": "retrieval-005",
+    "query": "What maintenance tasks are recommended annually for compressed air systems?",
+    "expected_printed_pages": ["57"],
+    "expected_section": "8 - MAINTENANCE OF COMPRESSED AIR SYSTEMS",
+    "notes": "Schedule lookup."
+  },
+  {
+    "case_id": "retrieval-006",
+    "query": "What is the fault code for a John Deere 230LCR excavator hydraulic pump?",
+    "expected_printed_pages": [],
+    "expected_section": null,
+    "notes": "Wrong-machine and unsupported query; should produce no exact source hit."
+  }
+]
