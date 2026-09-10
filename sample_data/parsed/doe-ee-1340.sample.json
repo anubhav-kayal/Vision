@@ -1,0 +1,416 @@
+{
+  "document": {
+    "document_id": "doe-ee-1340",
+    "manufacturer": "U.S. Department of Energy",
+    "equipment_family": "industrial compressed air systems",
+    "model": null,
+    "document_type": "technical_sourcebook",
+    "revision": "Third Edition",
+    "effective_date": "2016-01-01",
+    "authority_level": "government_technical_guide",
+    "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+  },
+  "source_file": "sample_data/raw/DOE-EE-1340-compressed-air-sourcebook.pdf",
+  "pages": [
+    {
+      "pdf_page_number": 9,
+      "printed_page_label": "4",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nCompressor\nPackage\nEnclosure\nMoisture\nSeparator\nCondensate\nDrain\nFigure 1.1 Components of a Typical Industrial Compressed Air System\nAir Inlet\nFilter\nAftercooler\nand Lubricant\nCooler\nControl\nPanel\nMotor\nCompressor\nAir End\nLubricant/Air\nSeparator\nFilter, Regulator\nLubricator\nPneumatic\nTool\nDistribution\nSystem\nPressure-Flow\nController\nDryer\nAir Filter\nAir\nReceiver",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 10,
+      "printed_page_label": "5",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nAs shown in Figure 1.2, there are two basic compressor\ntypes: positive-displacement and dynamic. In the\npositive-displacement type, a given quantity of air or\ngas is trapped in a compression chamber and the\nvolume which it occupies is mechanically reduced,\ncausing a corresponding rise in pressure prior to\ndischarge. At constant speed, the air flow remains\nessentially constant with variations in discharge\npressure. Dynamic compressors impart velocity energy\nto continuously flowing air or gas by means of impellers\nrotating at very high speeds. The velocity energy is\nchanged into pressure energy both by the impellers and\nthe discharge volutes or diffusers. In the centrifugal-\ntype dynamic compressors, the shape of the impeller\nblades determines the relationship between air flow\nand the pressure (or head) generated.\nPositive Displacement Compressors\nThese compressors are available in two types:\nreciprocating and rotary. Reciprocating compressors\nwork like bicycle pumps with the exception that an\nelectric motor replaces the human energy source. A\npiston, driven through a crankshaft and connecting rod\nby an electric motor, reduces the volume in the cylinder\noccupied by the air or gas, compressing it to a higher\npressure. Single- acting compressors have a\ncompression stroke in only one direction, while double-\nacting units provide a compression stroke as the piston\nmoves in each direction. Large, industrial reciprocating\nair compressors are double-acting and water-cooled.\nMulti-stage, double- acting compressors are the most\nefficient compressors available, and are typically larger,\nnoisier, and more costly than comparable rotary units.\nReciprocating compressors are available in sizes from\nless than 1 hp to more than 600 hp.\nRotary compressors have gained popularity and are\nnow the “workhorse” of American industry. They are\nmost commonly used in sizes from about 10 to 500 hp.\nThe most common type of rotary compressor is the\nhelical-twin, screw-type (also known as rotary screw or\nhelical-lobe). Male and female rotors mesh, trapping\nair, and reducing the volume of the air along the rotors\nto the air discharge point. Rotary screw compressors\nhave low initial cost, compact size, low weight, and are\neasy to maintain. Rotary screw compressors may be air-\nor water-cooled. Less common rotary compressors\ninclude sliding-vane, liquid-ring, and scroll-type.\nSingle-Acting, Reciprocating Air Compressors\nThis type of compressor is characterized by its\n“automotive” type piston driven through a connecting\nrod from the crankshaft. Compression takes place on\nthe top side of the piston on each revolution of the\ncrankshaft. Single-acting, reciprocating air compressors\nare generally air-cooled. These may be single- stage,\nusually rated at discharge pressures from 25 to 125\npounds per square inch gauge (psig), or two-stage,\nusually rated at discharge pressures from 125 psig to\n175 psig or higher.\nThe most common air compressor in the fractional and\nsingle-digit hp sizes is the air-cooled, reciprocating air\ncompressor. Single-acting reciprocating compressors\nabove 30 hp are much less common. Two-stage and\nmulti-stage designs include inter-stage air-cooling to\nreduce air temperatures to the second stage for\nimproved efficiency and durability.\nPistons used in single-acting compressors are of the\n“automotive” or “full skirt” design, the underside of the\npiston being exposed to the crankcase. Lubricated\nversions have a combination of compression and\nlubricant-control piston rings, which seal the\ncompression chamber, control the lubricant to the\ncompression chamber, and act (in some designs) as\nsupport for piston movement on the cylinder walls.\nLubricant-free, or non-lube designs, do not allow\nlubricant in the compression chamber and use pistons\nof self-lubricating materials or use heat resistant, non-\nmetallic guides and piston rings that are self-\nlubricating. Some designs incorporate a distance piece\nor crosshead to isolate the crankcase from the\ncompression chamber.\nLubricant-less (or oil-less) designs have piston\narrangements similar to lubricant-free versions, but do\nnot have lubricant in the crankcase. Generally these\nhave greased pre-packed crankshafts and connecting\nrod bearings.",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 11,
+      "printed_page_label": "6",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nFigure 1.2 Compressor Family Tree\nCooling. Single-acting air compressors have different\narrangements for removing the heat of compression.\nAir-cooled versions have external finning for heat\ndissipation on the cylinder, cylinder head, and in some\ncases, the external heat exchanger. Air is drawn or\nblown across the fins and the compressor crankcase by\na fan, which may be the spokes of the drive\npulley/flywheel.\nLiquid-cooled compressors have jacketed cylinders,\nheads and heat exchangers, through which liquid\ncoolant is circulated to dissipate the heat of\ncompression. Water, or an ethylene glycol mixture to\nprevent freezing, may be employed.\nDrives. The most common drive arrangement is a belt\ndrive from an electric motor. The compressor sheave\nalso acts as a flywheel to limit torque pulsations and its\nspokes often are used for cooling air circulation. Belt\ndrives allow a great degree of flexibility in obtaining the\ndesired speed of rotation.\nFlange-mounted, or direct-coupled motor drives\nprovide compactness and minimum drive maintenance.\nBelts and couplings must be properly shielded for safety\nand to meet Occupational Safety & Health\nAdministration (OSHA) requirements.\nDouble-Acting, Reciprocating Air Compressors\nDouble-acting reciprocating compressors use both sides\nof the piston for air compression, almost doubling the\ncapacity for a given cylinder size. A piston rod is\nattached to the piston at one end and to a crosshead at\nthe other end. The crosshead ensures that the piston\ntravels concentrically within the cylinder. These\ncompressors may be single- or multi-stage, depending\non discharge pressure and hp size. These are generally\navailable in larger horsepower sizes.\nCooling. Double-acting air compressors generally have\ncooling water jackets around the cylinder body and in\nthe cylinder head. This, combined with their relatively\nslow speed of operation and water-cooled intercooling,\nresults in excellent compression efficiency.\nLubrication. Cylinder lubrication is generally by means\nof a pressure or vacuum-feed cylinder lubricator, with a\nfeed rate of several drops per minute, depending on\ncylinder size and piston speed and as specified by the\nmanufacturer. Lubricant-free versions also are available\nwith polytetrafluorethylene (PTFE) or similar materials\nfor pistons, riders, and compression rings. A distance\npiece is provided between the crankcase and the\ncylinder(s) to ensure that no part of the piston rod,",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 12,
+      "printed_page_label": "7",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nwhich enters the lubricated crankcase, can enter the\nlubricant-free cylinder area.\nBalance. Single- and two-cylinder compressors of this\ntype generally require a substantial foundation due to\nunbalanced reciprocating forces.\nDrives. Below 200 hp, belt drives and flange-mounted\ninduction motors are normally used. For motors larger\nthan 300 hp, flange-mounted, synchronous motors are\nsometimes used with a 1.0 power factor or 0.8 leading\npower factor to provide power factor correction to off-\nset other induction-type electrical loads.\nLubricant-Injected Rotary Screw Compressors\nThe lubricant-injected rotary screw compressor\npowered by an electric motor has become a dominant\ntype of industrial compressor for a wide variety of\napplications.\nCompression Principle. The lubricant-injected, rotary-\nscrew compressor consists of two intermeshing rotors\nin a machined housing (Rotor Housing) having an inlet\nport at one end and a discharge port at the other. The\nmale rotor has lobes formed helically along its length\nwhile the female rotor has corresponding helical\ngrooves or flutes. The number of helical lobes and\ngrooves may vary in otherwise similar designs.\nAir flowing in through the inlet port fills the spaces\nbetween the lobes on each rotor. Rotation then causes\nthe air to be trapped between the lobes and the rotor\nhousing as the inter-lobe spaces pass beyond the inlet\nport. As rotation continues, a lobe on one rotor rolls\ninto a groove on the other rotor and the point of\nintermeshing moves progressively along the axial length\nof the rotors. This reduces the space occupied by the\nair, resulting in increased pressure. Compression\ncontinues until the inter-lobe spaces are exposed to the\ndischarge port when the compressed air is discharged.\nLubricant is injected into the compression chamber\nduring compression and serves three basic functions:\n1) lubrication for the intermeshing rotors and\nassociated bearings; 2) removal of the heat caused by\ncompression; and 3) seals the clearances between the\nmeshing rotors and between rotors and rotor housing.\nLubrication. The generic term “lubricant” has been\nused instead of oil. The lubricant may be a hydrocarbon\nproduct, but most compressors now use cleaner and\nlonger life synthetic lubricants, including diesters,\npolyglycols, polyalphaolefins, polyol esters, and silicone-\nbased lubricants. These newer products are suitable for\na wider range of temperatures.\nA mixture of compressed air and injected lubricant\nleaves the air end and is passed to a sump/separator\nwhere the lubricant is removed from the compressed\nair. Directional and velocity changes are used to\nseparate most of the liquid. The remaining aerosols in\nthe compressed air, then are separated by means of an\nair/lubricant separator or a coalescing filter, resulting in\nonly a few parts per million (ppm) of lubricant carry-\nover (usually in the range of 2 to 5 ppm). A minimum\npressure device, often combined with a discharge check\nvalve, prevents excessive velocities through the\nseparator element until a normal system pressure is\nachieved at start-up. Most lubricant-injected rotary\nscrew compressor packages use the air pressure in the\nlubricant sump/separator, after the discharge of the air\nend, to circulate the lubricant through a filter and\ncooler prior to reinjection to the compression chamber.\nSome designs may use a lubricant pump.\nMulti-stage compressors. Multi-stage compressors\nhave different manufacturing designs. Multiple stages\nare used either for improved efficiency at a given\npressure or to achieve higher pressures.\nCooling. The temperature of the lubricant injected into\nthe compression chamber is generally controlled\ndirectly or indirectly to a minimum temperature by\ncontrolling the discharge temperature. A thermostatic\nbypass valve allows some or all of the lubricant being\ncirculated to bypass the lubricant cooler to maintain the\ndesired temperature over a wide range of ambient\ntemperatures.\nGenerally, suitable lubricant temperature and viscosity\nare required for proper lubrication, sealing, and to avoid\ncondensation in the lubricant sump. It also is necessary\nto avoid excessive temperatures, which could result in a\nbreakdown of the lubricant and reduced life.\nIn addition to lubricant cooling, an aftercooler is used to\ncool the discharged air and a moisture separator with\nan automatic drain trap removes the condensate. In the",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 13,
+      "printed_page_label": "8",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nmajority of applications, air-cooled, radiator-type\nlubricants and air coolers are employed and provide the\nopportunity for heat recovery from the compression\nprocess for facility heating. In water-cooled designs,\nwater-cooled heat exchangers with water control valves\nalso are available on most rotary screw compressor\npackages.\nSingle-stage, lubricant-injected, rotary screw\ncompressor packages are available from 3 to 900 hp, or\n8 to 5000 cubic feet per minute (cfm), with discharge\npressures from 50 to 250 psig. Two-stage versions can\nreduce specific power and some can achieve discharge\npressures up to 500 psig. Lubricant-injected, rotary\nscrew vacuum pumps also are available from 80 to\n3,100 inlet cfm and vacuum to 29.7 inches Hg.\nLubricant-injected, rotary-vane compressors are a less\ncommon type of rotary compressor and are available in\na limited size range.\nAir/Lubricant Separators. The air/lubricant separator in\na lubricant-cooled, rotary screw compressor generally\nstarts with a 2 to 3 psid pressure drop at full-load when\nnew. Higher pressure differentials cause the\ncompressor motor to consume more energy and\npossibly exceed the service factor. Maintenance\nmanuals usually suggest changing them when there is a\n10 to 12 psid pressure drop across the separator. In\nmany cases it may make sense to make an earlier\nseparator replacement, especially if electricity prices\nare high.\nLubricant-Free Rotary Screw Compressors\nThe principle of compression in lubricant-free rotary\nscrew compressors is similar to that of the lubricant-\ninjected rotary screw compressors but, without\nlubricant being introduced into the compression\nchamber. Two distinct types are available: the dry type\nand the water-injected type.\nIn the dry type, the intermeshing rotors are not allowed\nto touch and their relative positions are maintained by\nmeans of lubricated timing gears external to the\ncompression chamber. Since there is no injected fluid to\nremove the heat of compression, most designs use two\nstages of compression with an intercooler between the\nstages and an aftercooler after the second stage. The\nlack of a sealing fluid also requires higher rotation\nspeeds than for the lubricant-injected type. Dry-type,\nlubricant-free rotary screw compressors have a range\nfrom 25 to 4,000 hp or 90 to 20,000 cfm. Single-stage\nunits operate up to 50 psig, while two-stage can\ngenerally achieve up to 150 psig.\nIn the water-injected type, similar timing gear\nconstruction may sometimes be used, but water is\ninjected into the compression chamber to act as a seal\nin internal clearances and to remove the heat of\ncompression. This may allow pressures in the 100 to\n150 psig range to be accomplished with only one stage.\nThe injected water, together with condensed moisture\nfrom the atmosphere, is removed from the discharged\ncompressed air by a conventional moisture separation\ndevice. Similar to the lubricant-injected type, lubricant-\nfree rotary screw compressors generally are packaged\nwith all necessary accessories.\nLubrication. Lubricant-free rotary screw compressors\nutilize lubricant for bearings and gears, which are\nisolated from the compression chamber. The lubricant\nalso may be used for stator jacket cooling in air-cooled\nunits. Typically, a lubricant pump is directly driven from\na shaft in the gearbox, assuring lubricant flow\nimmediately at start-up and during run-down in the\nevent of power failure. A lubricant filter, typically with\n10 micron rating, protects bearings, gears, and the\nlubricant pump from damage.\nCooling. The cooling system for the dry-type, lubricant-\nfree rotary screw compressor normally consists of an air\ncooler after each stage and a lubricant cooler. These\nmay be water-cooled or air-cooled, radiator-type. Some\nolder two-stage designs also employ an additional heat\nexchanger to cool a small portion of the compressed air\nfor recycling to the compressor inlet during the\nunloaded period.\nDynamic Compressors\nDynamic compressors can be categorized as centrifugal\nor axial. The centrifugal-type is the most common and is\nwidely used for industrial compressed air. Each\nimpeller, rotating at high speed, imparts radial flow to\nthe air or gas, which then passes through a volute or\ndiffuser. Some large manufacturing plants use\ncentrifugal compressors for both base loading and\ntrimming, while in other facilities, plants use other\ncompressor types to accommodate demand load swings",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 14,
+      "printed_page_label": "9",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nwhile the dynamic centrifugal compressors handle the\nbase load.\nAxial compressors consist of a rotor with multiple rows\nof blades and a matching rotor housing with rows of\nstationary vanes. The rotating blades impart energy to\nthe air, primarily in an axial plane. The stationary vanes\nthen act as a diffuser to convert the residual kinetic\nenergy into potential energy by increasing the pressure.\nThis type of compressor is restricted to very high flow\ncapacities. Mixed flow compressors have impellers and\nrotors which combine the characteristics of both axial\nand centrifugal compressors.\nCentrifugal Air Compressors\nA centrifugal air compressor has a continuously flowing\nair stream which has kinetic energy, imparted to it by an\nimpeller, or impellers, which rotate at speeds that can\nexceed 50,000 revolutions per minute (rpm).\nApproximately one half of the energy is developed in\nthe impeller with the other half achieved by converting\nthe velocity energy to pressure energy as the air\nvelocity is reduced in a diffuser and volute.\nThe most common centrifugal air compressor is one\nwith two to four stages for pressures in the 100 to 150\npsig range. A water-cooled intercooler and separator\nbetween each stage returns the air temperature to\napproximately ambient temperature and removes\ncondensed moisture before entering the next stage. An\naftercooler cools the air from the final stage and a\nmoisture separator with an automatic drain removes\nthe moisture prior to air delivery to distribution. Air-\ncooled centrifugal compressors are available within a\nlimited size range.\nThe inherent characteristic of centrifugal air\ncompressors is that as system pressure decreases, the\ncompressor’s flow capacity increases. The steepness of\nthe pressure head/capacity curve is dependent upon\nthe design of the impellers and diffusers.\nMost standard industrial centrifugal air compressor\npackages are designed for an ambient temperature of\n95°F and near sea level barometer pressure. The\ndynamic nature of the centrifugal compressor results in\nthe pressure head generated by each impeller\nincreasing as the air density increases. The compressor\nmass flow and actual cubic feet per minute capacity at a\ngiven discharge pressure increases as the ambient\ntemperature decreases, provided the motor can\nsupport the increased power requirements.\nTypically, a capacity control system is provided with the\ncompressor to maintain the desired capacity and to\noperate within the motor horsepower limits. The\ncontrol system regulates the air flow by means of an\ninlet throttle valve or inlet guide vanes. The minimal\nthrottle point is established to prevent flow reversal\nthru an impeller/diffuser stage, which is also known as\nsurge. Control systems either unload the compressor or\nblow off the excess air to atmosphere to avoid surge,\nwhich could result in excessive vibration and potential\ndamage to the compressor. Given adequate storage,\nsome manufacturers will operate the compressor\ncontrols in a load/unload mode at lower flow\nconditions.\nCentrifugal air compressors range from around 200 to\nmore than 100,000 cfm, but the more common air\ncompressors are from 1,200 to 5,000 cfm and with\ndischarge pressures up to 125 psig. These may have\nseveral impellers in line on a single shaft or with\nseparate impellers integrally geared.\nCentrifugal air compressors provide lubricant-free air\ndelivery as there is no lubricant in the compression\nchambers. Lubrication for speed increasing gears and\nthe special high-speed shaft bearings is kept away from\nthe compression chambers by means of shaft seals,\nwhich may also have air purge and vent connections.\nCentrifugal air compressors are high-speed rotating\nmachines and as such, shaft vibration monitoring is\nmandated to record operational trends and protect the\nequipment. Automatic control of the compressors is\ntypical and has been greatly improved by the use of\nmicroprocessors, which monitor the pressure, capacity,\ntemperature characteristics and main-drive motor\ncurrent draw. It is important that the manufacturer’s\nrecommended maintenance procedures be followed\nand that certain maintenance procedures be carried out\nby qualified staff. This is particularly true of attempts to\nremove an impeller from its shaft, since special\nprocedures and tools may be involved.\nLubrication and Lubrication Systems. Centrifugal\ncompressors use a pressure lubrication system for\nbearings and drive gears. The main lubricant pump may",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    },
+    {
+      "pdf_page_number": 15,
+      "printed_page_label": "10",
+      "text": "INTRODUCTION TO COMPRESSED AIR SYSTEMS\nbe driven from the gearbox input shaft with an electric\nmotor-driven auxiliary lubricant pump for pre-\nlubrication prior to start-up and for post-lubrication\nduring a cool down period. A water-cooled lubricant\ncooler is also included.\nBecause of the high rotation speeds, some designs use a\nhigh-pressure lubricant supply to the special bearings\ninvolved. The manufacturer’s recommended lubricant\nshould be used and changed at the specified intervals.\nCompressor Prime Movers\nThe prime mover is the main power source providing\nenergy to drive the compressor. The prime mover must\nprovide enough torque and power to start the\ncompressor, accelerate it to full speed, and keep the\nunit operating under various design conditions. This\npower can be provided by any one of the following\nsources: electric motors, diesel or natural gas engines,\nsteam turbines and combustion turbines. Electric\nmotors are by far the most common type of prime\nmover.\nElectric motors are a widely available and economical\nmeans of providing reliable and efficient power to\ncompressors. Most compressors use standard,\npolyphase induction motors. In many cases, either a\nstandard- or a premium-efficient motor can be specified\nwhen purchasing a compressor or replacement motor.\nThe incremental cost of the premium efficient motor is\ntypically recovered in a very short time from the\nresulting energy savings. When replacing a standard\nmotor with a premium-efficient version, careful\nattention should be paid to performance parameters,\nsuch as full-load speed and torque. A replacement\nmotor with performance as close as possible to the\noriginal motor should be used. Most new motors are\nsuitable for inverter duty applications.\nDiesel or natural gas engines are common compressor\npower sources in the oil and gas industries.\nConsiderations such as convenience, cost, and the\navailability of liquid fuel and natural gas play a role in\nselecting an engine to power a compressor. Although\nthe majority of industrial compressed air systems use\nelectric motors for prime movers, in recent years there\nhas been renewed interest in using non-electric drives,\nsuch as reciprocating engines powered by natural gas,\nparticularly in regions with high electricity rates.\nStandby or emergency compressors may also be engine-\ndriven to allow operation in the event of a loss of\nelectrical power. Maintenance costs for engine-driven\nsystems are significantly higher than those that use\nelectric motors.\nThe oldest method of driving compressors is through\nthe use of a steam engine or turbine. In general, how-\never, it is not economical to use a steam engine or\nturbine unless the steam is inexpensively and readily\navailable within the plant for use as a power source.\nCompressed Air System Controls\nCompressed air system controls serve to regulate the\npressure by matching compressor supply with system\ndemand. Proper compressor control is essential to\nefficient operation and high performance. Because\ncompressor systems are typically sized to meet a\nsystem’s maximum demand, a control system is almost\nalways needed to reduce the output of the compressor\nduring times of lower demand. Compressor controls are\ntypically included in the compressor package, and many\nmanufacturers offer more than one type of control\ntechnology. Systems with multiple compressors use\nmore sophisticated controls (network or system master\ncontrols) to orchestrate compressor operation and air\ndelivery to the system.\nNetwork controls use the on-board compressor\ncontrols’ microprocessors linked together to form a\nchain of communication that makes decisions to\nstop/start, load/unload, modulate, vary displacement,\nand vary speed. Usually, one compressor assumes the\nlead with the others being subordinate to the\ncommands from this compressor.\nSystem master controls coordinate all of the functions\nnecessary to optimize compressed air as a utility.\nSystem master controls have many functional\ncapabilities, including the ability to monitor and control\nall components in the system, as well as trending data,\nto enhance maintenance functions and minimize costs\nof operation. Other types of controllers, such as\npressure/flow controllers, may also improve the\nperformance of some systems.\nThe type of control system specified for a given system\nis largely determined by the types of compressors being\nused and the facility’s demand profile. If a system has a",
+      "sections": [
+        "INTRODUCTION TO COMPRESSED AIR SYSTEMS"
+      ]
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "doe-ee-1340-p9-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 9,
+      "printed_page_label": "4",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "Compressor Package Enclosure Moisture Separator Condensate Drain Figure 1.1 Components of a Typical Industrial Compressed Air System Air Inlet Filter Aftercooler and Lubricant Cooler Control Panel Motor Compressor Air End Lubricant/Air Separator Filter, Regulator Lubricator Pneumatic Tool Distribution System Pressure-Flow Controller Dryer Air Filter Air Receiver",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p10-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 10,
+      "printed_page_label": "5",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "As shown in Figure 1.2, there are two basic compressor types: positive-displacement and dynamic. In the positive-displacement type, a given quantity of air or gas is trapped in a compression chamber and the volume which it occupies is mechanically reduced, causing a corresponding rise in pressure prior to discharge. At constant speed, the air flow remains essentially constant with variations in discharge pressure. Dynamic compressors impart velocity energy to continuously flowing air or gas by means of impellers rotating at very high speeds. The velocity energy is changed into pressure energy both by the impellers and the discharge volutes or diffusers. In the centrifugal- type dynamic compressors, the shape of the impeller blades determines the relationship between air flow and the pressure (or head) generated. Positive Displacement Compressors These compressors are available in two types: reciprocating and rotary. Reciprocating compressors work like bicycle pumps with the exception that an electric motor replaces the human energy source. A piston, driven through a crankshaft and connecting rod by an electric motor, reduces the volume in the cylinder occupied by the air or gas, compressing it to a higher pressure. Single- acting compressors have a compression stroke in only one direction, while double- acting units provide a compression stroke as the piston moves in each direction. Large, industrial reciprocating air compressors are double-acting and water-cooled. Multi-stage, double- acting compressors are the most efficient compressors available, and are typically larger, noisier, and more costly than comparable rotary units. Reciprocating compressors are available in sizes from less than 1 hp to more than 600 hp. Rotary compressors have gained popularity and are now",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p10-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 10,
+      "printed_page_label": "5",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "the “workhorse” of American industry. They are most commonly used in sizes from about 10 to 500 hp. The most common type of rotary compressor is the helical-twin, screw-type (also known as rotary screw or helical-lobe). Male and female rotors mesh, trapping air, and reducing the volume of the air along the rotors to the air discharge point. Rotary screw compressors have low initial cost, compact size, low weight, and are easy to maintain. Rotary screw compressors may be air- or water-cooled. Less common rotary compressors include sliding-vane, liquid-ring, and scroll-type. Single-Acting, Reciprocating Air Compressors This type of compressor is characterized by its “automotive” type piston driven through a connecting rod from the crankshaft. Compression takes place on the top side of the piston on each revolution of the crankshaft. Single-acting, reciprocating air compressors are generally air-cooled. These may be single- stage, usually rated at discharge pressures from 25 to 125 pounds per square inch gauge (psig), or two-stage, usually rated at discharge pressures from 125 psig to 175 psig or higher. The most common air compressor in the fractional and single-digit hp sizes is the air-cooled, reciprocating air compressor. Single-acting reciprocating compressors above 30 hp are much less common. Two-stage and multi-stage designs include inter-stage air-cooling to reduce air temperatures to the second stage for improved efficiency and durability. Pistons used in single-acting compressors are of the “automotive” or “full skirt” design, the underside of the piston being exposed to the crankcase. Lubricated versions have a combination of compression and lubricant-control piston rings, which seal the compression chamber, control the lubricant to the compression chamber, and",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p10-c2",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 10,
+      "printed_page_label": "5",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "act (in some designs) as support for piston movement on the cylinder walls. Lubricant-free, or non-lube designs, do not allow lubricant in the compression chamber and use pistons of self-lubricating materials or use heat resistant, non- metallic guides and piston rings that are self- lubricating. Some designs incorporate a distance piece or crosshead to isolate the crankcase from the compression chamber. Lubricant-less (or oil-less) designs have piston arrangements similar to lubricant-free versions, but do not have lubricant in the crankcase. Generally these have greased pre-packed crankshafts and connecting rod bearings.",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p11-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 11,
+      "printed_page_label": "6",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "Figure 1.2 Compressor Family Tree Cooling. Single-acting air compressors have different arrangements for removing the heat of compression. Air-cooled versions have external finning for heat dissipation on the cylinder, cylinder head, and in some cases, the external heat exchanger. Air is drawn or blown across the fins and the compressor crankcase by a fan, which may be the spokes of the drive pulley/flywheel. Liquid-cooled compressors have jacketed cylinders, heads and heat exchangers, through which liquid coolant is circulated to dissipate the heat of compression. Water, or an ethylene glycol mixture to prevent freezing, may be employed. Drives. The most common drive arrangement is a belt drive from an electric motor. The compressor sheave also acts as a flywheel to limit torque pulsations and its spokes often are used for cooling air circulation. Belt drives allow a great degree of flexibility in obtaining the desired speed of rotation. Flange-mounted, or direct-coupled motor drives provide compactness and minimum drive maintenance. Belts and couplings must be properly shielded for safety and to meet Occupational Safety & Health Administration (OSHA) requirements. Double-Acting, Reciprocating Air Compressors Double-acting reciprocating compressors use both sides of the piston for air compression, almost doubling the capacity for a given cylinder size. A piston rod is attached to the piston at one end and to a crosshead at the other end. The crosshead ensures that the piston travels concentrically within the cylinder. These compressors may be single- or multi-stage, depending on discharge pressure and hp size. These are generally available in larger horsepower sizes. Cooling. Double-acting air compressors generally have cooling water jackets around the cylinder body an",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p11-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 11,
+      "printed_page_label": "6",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "d in the cylinder head. This, combined with their relatively slow speed of operation and water-cooled intercooling, results in excellent compression efficiency. Lubrication. Cylinder lubrication is generally by means of a pressure or vacuum-feed cylinder lubricator, with a feed rate of several drops per minute, depending on cylinder size and piston speed and as specified by the manufacturer. Lubricant-free versions also are available with polytetrafluorethylene (PTFE) or similar materials for pistons, riders, and compression rings. A distance piece is provided between the crankcase and the cylinder(s) to ensure that no part of the piston rod,",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p12-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 12,
+      "printed_page_label": "7",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "which enters the lubricated crankcase, can enter the lubricant-free cylinder area. Balance. Single- and two-cylinder compressors of this type generally require a substantial foundation due to unbalanced reciprocating forces. Drives. Below 200 hp, belt drives and flange-mounted induction motors are normally used. For motors larger than 300 hp, flange-mounted, synchronous motors are sometimes used with a 1.0 power factor or 0.8 leading power factor to provide power factor correction to off- set other induction-type electrical loads. Lubricant-Injected Rotary Screw Compressors The lubricant-injected rotary screw compressor powered by an electric motor has become a dominant type of industrial compressor for a wide variety of applications. Compression Principle. The lubricant-injected, rotary- screw compressor consists of two intermeshing rotors in a machined housing (Rotor Housing) having an inlet port at one end and a discharge port at the other. The male rotor has lobes formed helically along its length while the female rotor has corresponding helical grooves or flutes. The number of helical lobes and grooves may vary in otherwise similar designs. Air flowing in through the inlet port fills the spaces between the lobes on each rotor. Rotation then causes the air to be trapped between the lobes and the rotor housing as the inter-lobe spaces pass beyond the inlet port. As rotation continues, a lobe on one rotor rolls into a groove on the other rotor and the point of intermeshing moves progressively along the axial length of the rotors. This reduces the space occupied by the air, resulting in increased pressure. Compression continues until the inter-lobe spaces are exposed to the discharge port when the compressed air is discharged. Lubricant is injected into the compression",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p12-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 12,
+      "printed_page_label": "7",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "chamber during compression and serves three basic functions: 1) lubrication for the intermeshing rotors and associated bearings; 2) removal of the heat caused by compression; and 3) seals the clearances between the meshing rotors and between rotors and rotor housing. Lubrication. The generic term “lubricant” has been used instead of oil. The lubricant may be a hydrocarbon product, but most compressors now use cleaner and longer life synthetic lubricants, including diesters, polyglycols, polyalphaolefins, polyol esters, and silicone- based lubricants. These newer products are suitable for a wider range of temperatures. A mixture of compressed air and injected lubricant leaves the air end and is passed to a sump/separator where the lubricant is removed from the compressed air. Directional and velocity changes are used to separate most of the liquid. The remaining aerosols in the compressed air, then are separated by means of an air/lubricant separator or a coalescing filter, resulting in only a few parts per million (ppm) of lubricant carry- over (usually in the range of 2 to 5 ppm). A minimum pressure device, often combined with a discharge check valve, prevents excessive velocities through the separator element until a normal system pressure is achieved at start-up. Most lubricant-injected rotary screw compressor packages use the air pressure in the lubricant sump/separator, after the discharge of the air end, to circulate the lubricant through a filter and cooler prior to reinjection to the compression chamber. Some designs may use a lubricant pump. Multi-stage compressors. Multi-stage compressors have different manufacturing designs. Multiple stages are used either for improved efficiency at a given pressure or to achieve higher pressures. Cooling. The temperature of",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p12-c2",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 12,
+      "printed_page_label": "7",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "the lubricant injected into the compression chamber is generally controlled directly or indirectly to a minimum temperature by controlling the discharge temperature. A thermostatic bypass valve allows some or all of the lubricant being circulated to bypass the lubricant cooler to maintain the desired temperature over a wide range of ambient temperatures. Generally, suitable lubricant temperature and viscosity are required for proper lubrication, sealing, and to avoid condensation in the lubricant sump. It also is necessary to avoid excessive temperatures, which could result in a breakdown of the lubricant and reduced life. In addition to lubricant cooling, an aftercooler is used to cool the discharged air and a moisture separator with an automatic drain trap removes the condensate. In the",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p13-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 13,
+      "printed_page_label": "8",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "majority of applications, air-cooled, radiator-type lubricants and air coolers are employed and provide the opportunity for heat recovery from the compression process for facility heating. In water-cooled designs, water-cooled heat exchangers with water control valves also are available on most rotary screw compressor packages. Single-stage, lubricant-injected, rotary screw compressor packages are available from 3 to 900 hp, or 8 to 5000 cubic feet per minute (cfm), with discharge pressures from 50 to 250 psig. Two-stage versions can reduce specific power and some can achieve discharge pressures up to 500 psig. Lubricant-injected, rotary screw vacuum pumps also are available from 80 to 3,100 inlet cfm and vacuum to 29.7 inches Hg. Lubricant-injected, rotary-vane compressors are a less common type of rotary compressor and are available in a limited size range. Air/Lubricant Separators. The air/lubricant separator in a lubricant-cooled, rotary screw compressor generally starts with a 2 to 3 psid pressure drop at full-load when new. Higher pressure differentials cause the compressor motor to consume more energy and possibly exceed the service factor. Maintenance manuals usually suggest changing them when there is a 10 to 12 psid pressure drop across the separator. In many cases it may make sense to make an earlier separator replacement, especially if electricity prices are high. Lubricant-Free Rotary Screw Compressors The principle of compression in lubricant-free rotary screw compressors is similar to that of the lubricant- injected rotary screw compressors but, without lubricant being introduced into the compression chamber. Two distinct types are available: the dry type and the water-injected type. In the dry type, the intermeshing rotors are not allowed to touch and th",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p13-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 13,
+      "printed_page_label": "8",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "eir relative positions are maintained by means of lubricated timing gears external to the compression chamber. Since there is no injected fluid to remove the heat of compression, most designs use two stages of compression with an intercooler between the stages and an aftercooler after the second stage. The lack of a sealing fluid also requires higher rotation speeds than for the lubricant-injected type. Dry-type, lubricant-free rotary screw compressors have a range from 25 to 4,000 hp or 90 to 20,000 cfm. Single-stage units operate up to 50 psig, while two-stage can generally achieve up to 150 psig. In the water-injected type, similar timing gear construction may sometimes be used, but water is injected into the compression chamber to act as a seal in internal clearances and to remove the heat of compression. This may allow pressures in the 100 to 150 psig range to be accomplished with only one stage. The injected water, together with condensed moisture from the atmosphere, is removed from the discharged compressed air by a conventional moisture separation device. Similar to the lubricant-injected type, lubricant- free rotary screw compressors generally are packaged with all necessary accessories. Lubrication. Lubricant-free rotary screw compressors utilize lubricant for bearings and gears, which are isolated from the compression chamber. The lubricant also may be used for stator jacket cooling in air-cooled units. Typically, a lubricant pump is directly driven from a shaft in the gearbox, assuring lubricant flow immediately at start-up and during run-down in the event of power failure. A lubricant filter, typically with 10 micron rating, protects bearings, gears, and the lubricant pump from damage. Cooling. The cooling system for the dry-type, lubricant- free rotary sc",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p13-c2",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 13,
+      "printed_page_label": "8",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "rew compressor normally consists of an air cooler after each stage and a lubricant cooler. These may be water-cooled or air-cooled, radiator-type. Some older two-stage designs also employ an additional heat exchanger to cool a small portion of the compressed air for recycling to the compressor inlet during the unloaded period. Dynamic Compressors Dynamic compressors can be categorized as centrifugal or axial. The centrifugal-type is the most common and is widely used for industrial compressed air. Each impeller, rotating at high speed, imparts radial flow to the air or gas, which then passes through a volute or diffuser. Some large manufacturing plants use centrifugal compressors for both base loading and trimming, while in other facilities, plants use other compressor types to accommodate demand load swings",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p14-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 14,
+      "printed_page_label": "9",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "while the dynamic centrifugal compressors handle the base load. Axial compressors consist of a rotor with multiple rows of blades and a matching rotor housing with rows of stationary vanes. The rotating blades impart energy to the air, primarily in an axial plane. The stationary vanes then act as a diffuser to convert the residual kinetic energy into potential energy by increasing the pressure. This type of compressor is restricted to very high flow capacities. Mixed flow compressors have impellers and rotors which combine the characteristics of both axial and centrifugal compressors. Centrifugal Air Compressors A centrifugal air compressor has a continuously flowing air stream which has kinetic energy, imparted to it by an impeller, or impellers, which rotate at speeds that can exceed 50,000 revolutions per minute (rpm). Approximately one half of the energy is developed in the impeller with the other half achieved by converting the velocity energy to pressure energy as the air velocity is reduced in a diffuser and volute. The most common centrifugal air compressor is one with two to four stages for pressures in the 100 to 150 psig range. A water-cooled intercooler and separator between each stage returns the air temperature to approximately ambient temperature and removes condensed moisture before entering the next stage. An aftercooler cools the air from the final stage and a moisture separator with an automatic drain removes the moisture prior to air delivery to distribution. Air- cooled centrifugal compressors are available within a limited size range. The inherent characteristic of centrifugal air compressors is that as system pressure decreases, the compressor’s flow capacity increases. The steepness of the pressure head/capacity curve is dependent upon the design",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p14-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 14,
+      "printed_page_label": "9",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "of the impellers and diffusers. Most standard industrial centrifugal air compressor packages are designed for an ambient temperature of 95°F and near sea level barometer pressure. The dynamic nature of the centrifugal compressor results in the pressure head generated by each impeller increasing as the air density increases. The compressor mass flow and actual cubic feet per minute capacity at a given discharge pressure increases as the ambient temperature decreases, provided the motor can support the increased power requirements. Typically, a capacity control system is provided with the compressor to maintain the desired capacity and to operate within the motor horsepower limits. The control system regulates the air flow by means of an inlet throttle valve or inlet guide vanes. The minimal throttle point is established to prevent flow reversal thru an impeller/diffuser stage, which is also known as surge. Control systems either unload the compressor or blow off the excess air to atmosphere to avoid surge, which could result in excessive vibration and potential damage to the compressor. Given adequate storage, some manufacturers will operate the compressor controls in a load/unload mode at lower flow conditions. Centrifugal air compressors range from around 200 to more than 100,000 cfm, but the more common air compressors are from 1,200 to 5,000 cfm and with discharge pressures up to 125 psig. These may have several impellers in line on a single shaft or with separate impellers integrally geared. Centrifugal air compressors provide lubricant-free air delivery as there is no lubricant in the compression chambers. Lubrication for speed increasing gears and the special high-speed shaft bearings is kept away from the compression chambers by means of shaft seals, which may a",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p14-c2",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 14,
+      "printed_page_label": "9",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "lso have air purge and vent connections. Centrifugal air compressors are high-speed rotating machines and as such, shaft vibration monitoring is mandated to record operational trends and protect the equipment. Automatic control of the compressors is typical and has been greatly improved by the use of microprocessors, which monitor the pressure, capacity, temperature characteristics and main-drive motor current draw. It is important that the manufacturer’s recommended maintenance procedures be followed and that certain maintenance procedures be carried out by qualified staff. This is particularly true of attempts to remove an impeller from its shaft, since special procedures and tools may be involved. Lubrication and Lubrication Systems. Centrifugal compressors use a pressure lubrication system for bearings and drive gears. The main lubricant pump may",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p15-c0",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 15,
+      "printed_page_label": "10",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "be driven from the gearbox input shaft with an electric motor-driven auxiliary lubricant pump for pre- lubrication prior to start-up and for post-lubrication during a cool down period. A water-cooled lubricant cooler is also included. Because of the high rotation speeds, some designs use a high-pressure lubricant supply to the special bearings involved. The manufacturer’s recommended lubricant should be used and changed at the specified intervals. Compressor Prime Movers The prime mover is the main power source providing energy to drive the compressor. The prime mover must provide enough torque and power to start the compressor, accelerate it to full speed, and keep the unit operating under various design conditions. This power can be provided by any one of the following sources: electric motors, diesel or natural gas engines, steam turbines and combustion turbines. Electric motors are by far the most common type of prime mover. Electric motors are a widely available and economical means of providing reliable and efficient power to compressors. Most compressors use standard, polyphase induction motors. In many cases, either a standard- or a premium-efficient motor can be specified when purchasing a compressor or replacement motor. The incremental cost of the premium efficient motor is typically recovered in a very short time from the resulting energy savings. When replacing a standard motor with a premium-efficient version, careful attention should be paid to performance parameters, such as full-load speed and torque. A replacement motor with performance as close as possible to the original motor should be used. Most new motors are suitable for inverter duty applications. Diesel or natural gas engines are common compressor power sources in the oil and gas industries. Co",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p15-c1",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 15,
+      "printed_page_label": "10",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "nsiderations such as convenience, cost, and the availability of liquid fuel and natural gas play a role in selecting an engine to power a compressor. Although the majority of industrial compressed air systems use electric motors for prime movers, in recent years there has been renewed interest in using non-electric drives, such as reciprocating engines powered by natural gas, particularly in regions with high electricity rates. Standby or emergency compressors may also be engine- driven to allow operation in the event of a loss of electrical power. Maintenance costs for engine-driven systems are significantly higher than those that use electric motors. The oldest method of driving compressors is through the use of a steam engine or turbine. In general, how- ever, it is not economical to use a steam engine or turbine unless the steam is inexpensively and readily available within the plant for use as a power source. Compressed Air System Controls Compressed air system controls serve to regulate the pressure by matching compressor supply with system demand. Proper compressor control is essential to efficient operation and high performance. Because compressor systems are typically sized to meet a system’s maximum demand, a control system is almost always needed to reduce the output of the compressor during times of lower demand. Compressor controls are typically included in the compressor package, and many manufacturers offer more than one type of control technology. Systems with multiple compressors use more sophisticated controls (network or system master controls) to orchestrate compressor operation and air delivery to the system. Network controls use the on-board compressor controls’ microprocessors linked together to form a chain of communication that makes decisions t",
+      "chunking_strategy": "section_aware"
+    },
+    {
+      "chunk_id": "doe-ee-1340-p15-c2",
+      "document": {
+        "document_id": "doe-ee-1340",
+        "manufacturer": "U.S. Department of Energy",
+        "equipment_family": "industrial compressed air systems",
+        "model": null,
+        "document_type": "technical_sourcebook",
+        "revision": "Third Edition",
+        "effective_date": "2016-01-01",
+        "authority_level": "government_technical_guide",
+        "source": "https://www.govinfo.gov/app/details/GOVPUB-E-PURL-gpo176573"
+      },
+      "pdf_page_number": 15,
+      "printed_page_label": "10",
+      "section": "INTRODUCTION TO COMPRESSED AIR SYSTEMS",
+      "text": "o stop/start, load/unload, modulate, vary displacement, and vary speed. Usually, one compressor assumes the lead with the others being subordinate to the commands from this compressor. System master controls coordinate all of the functions necessary to optimize compressed air as a utility. System master controls have many functional capabilities, including the ability to monitor and control all components in the system, as well as trending data, to enhance maintenance functions and minimize costs of operation. Other types of controllers, such as pressure/flow controllers, may also improve the performance of some systems. The type of control system specified for a given system is largely determined by the types of compressors being used and the facility’s demand profile. If a system has a",
+      "chunking_strategy": "section_aware"
+    }
+  ]
+}
