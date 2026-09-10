@@ -21,7 +21,7 @@ Week 1 tests only the earliest measurable part of this hypothesis: whether a sma
 
 ## Week 1 success criteria
 
-- A legally usable equipment manual is selected and its identity is recorded.
+- A legally usable equipment technical document is selected and its identity is recorded.
 - Document content can be normalized without losing page-level provenance.
 - Baseline retrieval can be evaluated independently of answer generation.
 - Grounded responses distinguish supported, partial, and insufficient knowledge.

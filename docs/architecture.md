@@ -33,7 +33,7 @@ The authority level is an enum today so invalid values fail early, while the ord
 - A model-provider interface should accept a bounded context and return a validated `GroundedAnswer`.
 - Evaluation must record configuration and distinguish deterministic metrics from model-graded metrics.
 
-FastAPI is not introduced on Day 1 because there is no useful HTTP contract yet. Pydantic is used for the domain boundary and pytest for executable checks.
+The Day 2 ingestion boundary is `ingestion.pdf_parser.parse_pdf`, which returns page-preserving normalized text, and `ingestion.chunking`, which exposes fixed-size and section-aware strategies. FastAPI is not introduced because there is no useful HTTP contract yet. Pydantic is used for the domain boundary and pytest for executable checks.
 
 ## Safety posture
 
@@ -41,7 +41,7 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 
 ## Known technical debt
 
-- No selected manual or ingestion implementation exists yet.
+- The current sample is a government technical sourcebook rather than an OEM model-specific service manual; model-specific authority and asset matching remain a later experiment.
 - Authority precedence is represented but not enforced.
-- No chunk, retrieval, embedding, or provider interfaces have been implemented.
+- Retrieval, embedding, and provider interfaces have not been implemented.
 - Dates and document source validation will need tighter rules once real inputs arrive.
