@@ -46,4 +46,5 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 - Retrieval, embedding, and provider interfaces have not been implemented.
 - The current retrieval baseline has no asset-identity filter, dense embeddings, reranker, or hybrid score.
 - Grounded answer validation rejects malformed output and citations that do not match retrieved chunks; it does not yet verify every natural-language claim automatically.
+- Evaluation cases are manually curated in `evaluation/cases/` and must not introduce facts absent from the selected source document.
 - Dates and document source validation will need tighter rules once real inputs arrive.
