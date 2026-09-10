@@ -62,6 +62,7 @@ class ServiceCase(DomainModel):
 class GroundedSource(DomainModel):
     """A source excerpt that supports a grounded response claim."""
 
+    chunk_id: str | None = None
     document_id: str = Field(min_length=1)
     page: int | str = Field(description="Source page number or a source-defined page label")
     section: str | None = None
