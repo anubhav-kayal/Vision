@@ -13,6 +13,7 @@ class AuthorityLevel(StrEnum):
     SAFETY_INSTRUCTION = "safety_instruction"
     OEM_SERVICE_BULLETIN = "current_oem_service_bulletin"
     OEM_SERVICE_MANUAL = "current_oem_service_manual"
+    GOVERNMENT_TECHNICAL_GUIDE = "government_technical_guide"
     APPROVED_INTERNAL_SOP = "approved_internal_sop"
     VERIFIED_SERVICE_CASE = "verified_historical_service_case"
     UNVERIFIED_TECHNICIAN_NOTE = "unverified_technician_note"
