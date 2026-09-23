@@ -54,5 +54,6 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 - `backend.app.diagnostics.session.DiagnosticSessionService` orchestrates multi-turn assessment while preserving observation history and request provenance.
 - `backend.app.diagnostics.evidence_selection` ranks next-best evidence transparently and excludes stale, repeated, unavailable, or unsafe requests.
 - `backend.app.diagnostics.application.DiagnosticApplicationService` is the caller-facing boundary for session creation, observation intake, reassessment, and retrieval; repository storage remains replaceable.
+- `backend.app.api.create_app` exposes that application boundary through versioned HTTP routes and Problem Details errors; it has no machine-control endpoint.
 - Evaluation cases are manually curated in `evaluation/cases/` and must not introduce facts absent from the selected source document.
 - Dates and document source validation will need tighter rules once real inputs arrive.
