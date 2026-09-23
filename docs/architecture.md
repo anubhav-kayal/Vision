@@ -21,6 +21,8 @@ evaluation: fixed cases → deterministic metrics → preserved report
 `backend/app/models.py` contains the minimum shared vocabulary:
 
 - `Asset`: identifies the physical asset and configuration.
+- `AssetContext`: carries asset identity into retrieval and future diagnostic reasoning.
+- `DiagnosticSession`: carries reported symptoms, observations, qualitative hypotheses, evidence requests, and explicit diagnostic status.
 - `KnowledgeDocument`: records machine/document identity, revision, source, and authority.
 - `ServiceCase`: captures symptoms, observations, and eventual verified outcome fields.
 - `GroundedSource` and `GroundedAnswer`: define the provenance-bearing response boundary for later retrieval/LLM work.
@@ -30,6 +32,7 @@ The authority level is an enum today so invalid values fail early, while the ord
 ## Replacement boundaries
 
 - A retrieval interface should return chunks plus scores and provenance; storage may start local and later move to PostgreSQL/pgvector.
+- Retrieval accepts optional `AssetContext` and rejects known manufacturer, family, model, and revision conflicts while allowing generic family guidance.
 - `backend.app.grounded_answering.ModelProvider` accepts a bounded context and returns JSON that is validated into `GroundedAnswer`; provider-specific SDK code remains outside this boundary.
 - Evaluation must record configuration and distinguish deterministic metrics from model-graded metrics.
 
@@ -46,5 +49,9 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 - Retrieval, embedding, and provider interfaces have not been implemented.
 - The current retrieval baseline has no asset-identity filter, dense embeddings, reranker, or hybrid score.
 - Grounded answer validation rejects malformed output and citations that do not match retrieved chunks; it does not yet verify every natural-language claim automatically.
+- Diagnostic models are separated from the reasoning service; repair execution is not implemented.
+- `backend.app.diagnostics.engine.DiagnosticEngineV0` provides a narrow deterministic temperature-assessment path that reuses retrieval and returns hypotheses/evidence requests without repair execution.
+- `backend.app.diagnostics.session.DiagnosticSessionService` orchestrates multi-turn assessment while preserving observation history and request provenance.
+- `backend.app.diagnostics.evidence_selection` ranks next-best evidence transparently and excludes stale, repeated, unavailable, or unsafe requests.
 - Evaluation cases are manually curated in `evaluation/cases/` and must not introduce facts absent from the selected source document.
 - Dates and document source validation will need tighter rules once real inputs arrive.

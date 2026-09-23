@@ -8,6 +8,7 @@ from collections import Counter
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from backend.app.models import AssetContext
 from ingestion.models import DocumentChunk
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
@@ -105,7 +106,13 @@ class TfidfIndex:
             left, right = right, left
         return sum(value * right.get(token, 0.0) for token, value in left.items())
 
-    def retrieve(self, query: str, *, top_k: int = 5) -> list[RetrievedChunk]:
+    def retrieve(
+        self,
+        query: str,
+        *,
+        top_k: int = 5,
+        asset_context: AssetContext | None = None,
+    ) -> list[RetrievedChunk]:
         """Return top-k cosine-ranked chunks, excluding zero-overlap results."""
 
         if not query.strip():
@@ -119,6 +126,10 @@ class TfidfIndex:
 
         scored: list[tuple[float, int]] = []
         for index, vector in enumerate(self._vectors):
+            if asset_context and not self._document_applies(
+                self.chunks[index].document, asset_context
+            ):
+                continue
             denominator = query_norm * self._norms[index]
             if denominator == 0:
                 continue
@@ -127,6 +138,27 @@ class TfidfIndex:
                 scored.append((score, index))
         scored.sort(key=lambda pair: (-pair[0], self.chunks[pair[1]].chunk_id))
         return [self._result(score, self.chunks[index]) for score, index in scored[:top_k]]
+
+    @staticmethod
+    def _document_applies(document, asset: AssetContext) -> bool:
+        """Reject known identity conflicts while allowing generic family guidance."""
+
+        def compatible(requested: str | None, documented: str | None) -> bool:
+            return not requested or not documented or requested.casefold() == documented.casefold()
+
+        # A document without a model is generic guidance and may apply across OEMs.
+        # Once a document names a model, manufacturer/model/revision conflicts are hard filters.
+        model_specific = document.model is not None
+        return compatible(asset.equipment_family, document.equipment_family) and (
+            not model_specific
+            or all(
+                [
+                    compatible(asset.manufacturer, document.manufacturer),
+                    compatible(asset.model, document.model),
+                    compatible(asset.revision, document.revision),
+                ]
+            )
+        )
 
     @staticmethod
     def _result(score: float, chunk: DocumentChunk) -> RetrievedChunk:

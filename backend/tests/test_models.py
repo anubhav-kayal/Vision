@@ -6,6 +6,7 @@ from pydantic import ValidationError
 from backend.app.models import (
     AnswerStatus,
     Asset,
+    AssetContext,
     AuthorityLevel,
     GroundedAnswer,
     GroundedSource,
@@ -22,6 +23,24 @@ def test_asset_defaults_configuration_to_empty_mapping() -> None:
     )
 
     assert asset.configuration == {}
+    assert asset.equipment_family == "Compressor"
+
+
+def test_asset_context_copies_identity_without_claiming_sensor_evidence() -> None:
+    asset = Asset(
+        asset_id="asset-001",
+        manufacturer="Example OEM",
+        equipment_family="Compressor",
+        model="C-100",
+        firmware_version="1.2.3",
+        site="Plant A",
+    )
+
+    context = AssetContext.from_asset(asset)
+
+    assert context.model == "C-100"
+    assert context.firmware_version == "1.2.3"
+    assert context.metadata == {}
 
 
 def test_knowledge_document_preserves_authority_and_revision() -> None:
