@@ -11,11 +11,19 @@ from backend.app.diagnostics.models import (
     Observation,
     Symptom,
 )
+from backend.app.diagnostics.application import DiagnosticApplicationService
+from backend.app.diagnostics.repository import (
+    DiagnosticSessionRepository,
+    InMemoryDiagnosticSessionRepository,
+)
 from backend.app.diagnostics.session import DiagnosticSessionService
 
 __all__ = [
     "DiagnosticSession",
     "DiagnosticSessionService",
+    "DiagnosticApplicationService",
+    "DiagnosticSessionRepository",
+    "InMemoryDiagnosticSessionRepository",
     "DiagnosticAssessment",
     "DiagnosticRetrievalLog",
     "DiagnosticStatus",
