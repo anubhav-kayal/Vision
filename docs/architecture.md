@@ -1,6 +1,6 @@
-# Initial Architecture
+# Architecture
 
-## Day 1 boundary
+## Initial boundary
 
 The repository is a Python modular monolith. Day 1 contains only domain contracts and documentation. Later stages will add ingestion, retrieval, and grounded generation as replaceable modules rather than coupling them to a provider or API framework.
 
@@ -36,7 +36,10 @@ The authority level is an enum today so invalid values fail early, while the ord
 - `backend.app.grounded_answering.ModelProvider` accepts a bounded context and returns JSON that is validated into `GroundedAnswer`; provider-specific SDK code remains outside this boundary.
 - Evaluation must record configuration and distinguish deterministic metrics from model-graded metrics.
 
-The Day 2 ingestion boundary is `ingestion.pdf_parser.parse_pdf`, which returns page-preserving normalized text, and `ingestion.chunking`, which exposes fixed-size and section-aware strategies. Day 3 adds `ingestion.retrieval.TfidfIndex`, a deterministic local sparse-vector baseline that returns ranked chunks with provenance. It is deliberately not a semantic embedding model yet. FastAPI is not introduced because there is no useful HTTP contract yet. Pydantic is used for the domain boundary and pytest for executable checks.
+The ingestion boundary is `ingestion.pdf_parser.parse_pdf`, with page-preserving
+text and replaceable chunking strategies. `TfidfIndex` remains the deterministic
+retrieval baseline. The FastAPI adapter calls application services; Pydantic defines
+the domain contracts and pytest verifies their behavior.
 
 ## Safety posture
 
@@ -45,9 +48,13 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 ## Known technical debt
 
 - The current sample is a government technical sourcebook rather than an OEM model-specific service manual; model-specific authority and asset matching remain a later experiment.
-- Authority precedence is represented but not enforced.
-- Retrieval, embedding, and provider interfaces have not been implemented.
-- The current retrieval baseline has no asset-identity filter, dense embeddings, reranker, or hybrid score.
+- The pilot restricts applicable sources by authority but has no complete policy for
+  resolving contradictory OEM bulletins, safety instructions, and internal SOPs.
+- Retrieval, embedding, text, and vision provider boundaries are implemented. Live
+  model quality and machine-specific facts still need external validation.
+- TF-IDF remains the historical baseline. The pilot adds exact asset/revision
+  filtering, optional PostgreSQL full-text/pgvector retrieval, and reciprocal-rank
+  fusion. A learned reranker has not been evaluated.
 - Grounded answer validation rejects malformed output and citations that do not match retrieved chunks; it does not yet verify every natural-language claim automatically.
 - Diagnostic models are separated from the reasoning service; repair execution is not implemented.
 - `backend.app.diagnostics.engine.DiagnosticEngineV0` provides a narrow deterministic temperature-assessment path that reuses retrieval and returns hypotheses/evidence requests without repair execution.
@@ -57,3 +64,16 @@ The system is advisory and read-only. It must not control PLCs, valves, motors, 
 - `backend.app.api.create_app` exposes that application boundary through versioned HTTP routes and Problem Details errors; it has no machine-control endpoint.
 - Evaluation cases are manually curated in `evaluation/cases/` and must not introduce facts absent from the selected source document.
 - Dates and document source validation will need tighter rules once real inputs arrive.
+
+## Local pilot composition
+
+`runtime.create_runtime` wires SQL repositories, the catalog service, applicable
+corpus, playbook engine, object storage, and authenticated pilot routes. SQLite is
+the local default; PostgreSQL is optional. Alembic migrations are explicit.
+Full assessment payloads are appended transactionally with session updates.
+Image drafts remain unverified until confirmation; confirmation records a technician
+report, not a verified measurement. No real OEM playbook is bundled as approved.
+
+Use one API worker. Process-local locks are not distributed concurrency control.
+The shared pilot token is not tenant isolation or role-based authorization.
+See `pilot-runbook.md` for configuration and operating limitations.

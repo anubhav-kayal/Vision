@@ -77,9 +77,14 @@ class PlaybookEngine:
                 draft = self.provider.assess(json.dumps(dict(
                     problem=problem, observations=[o.model_dump(mode="json") for o in observations],
                     sources=[s.model_dump(mode="json") for s in sources],
+                    allowed_hypotheses=[dict(label=playbook.id, description=playbook.hypothesis)],
                 )))
                 draft = AssessmentDraft.model_validate(draft)
                 validate_proposal(draft, sources, [o.observation_id for o in observations])
+                if not draft.hypotheses:
+                    return stop(DiagnosticStatus.INSUFFICIENT_KNOWLEDGE, "MODEL_FOUND_NO_SUPPORT")
+                if any(h.label != playbook.id for h in draft.hypotheses):
+                    raise ProviderFailure("UNAPPROVED_HYPOTHESIS")
             except (ProviderFailure, ValidationError, TypeError):
                 return stop(DiagnosticStatus.ESCALATE, "MODEL_UNAVAILABLE_OR_UNGROUNDED")
         request = playbook.evidence_request.model_copy(deep=True)

@@ -1,21 +1,28 @@
 # Physical AI OS
 
-Week 1 technical prototype for an industrial maintenance intelligence layer.
+Industrial maintenance intelligence prototype with a runnable local diagnostic API.
 
 The prototype tests whether machine-specific documentation, asset identity, structured evidence, and deterministic constraints can support grounded technician assistance. It is advisory and read-only: it does not control machinery or claim authority over OEM documentation.
 
-## Day 1 status
+## Current status
 
-Day 1 establishes the repository, technical thesis, initial architecture, and minimal domain schemas. Ingestion, retrieval, answer generation, and evaluation are intentionally deferred until the following days.
+The local pilot includes asset/document registration, relational persistence,
+versioned PDF ingestion, applicable document retrieval, approved diagnostic
+playbooks, image intake/confirmation, optional hosted model adapters, and complete
+assessment history. PostgreSQL full-text/pgvector search is optional.
+
+Start with [the pilot runbook](docs/pilot-runbook.md). Real generator guidance
+requires an authorized manual and domain-approved playbooks; the bundled pilot
+evaluation is synthetic and does not measure industrial accuracy.
 
 ## Repository layout
 
 ```text
 physical-ai-os/
-├── backend/app/           # Domain models and future application boundary
+├── backend/app/           # Domain, application, persistence, and API boundaries
 ├── backend/tests/         # Automated tests
-├── ingestion/             # Future document parsing and chunking pipeline
-├── evaluation/            # Future cases, runners, and experiment results
+├── ingestion/             # PDF parsing, chunking, and retrieval channels
+├── evaluation/            # Reproducible retrieval and diagnostic evaluations
 ├── docs/                  # Thesis, architecture, decisions, and reports
 └── sample_data/           # Curated, legally usable experiment inputs
 ```
@@ -40,4 +47,5 @@ pytest
 python -m compileall backend
 ```
 
-See [docs/THESIS.md](docs/THESIS.md) and [docs/architecture.md](docs/architecture.md) for the current technical direction and explicit scope.
+Run `sh scripts/check.sh` for all pilot checks. See [docs/THESIS.md](docs/THESIS.md)
+and [docs/architecture.md](docs/architecture.md) for the technical direction and scope.
