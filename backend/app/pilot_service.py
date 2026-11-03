@@ -51,7 +51,9 @@ def technician_response(session, assessment):
     return dict(
         session_id=session.session_id, status=assessment.status,
         asset_status=session.asset.asset_status,
-        document_applicability="DOCUMENT_APPLICABLE" if assessment.sources else "UNCONFIRMED",
+        document_applicability="DOCUMENT_APPLICABLE" if (
+            assessment.retrieval and assessment.retrieval.retrieved_chunk_ids
+        ) else "DOCUMENT_NOT_APPLICABLE",
         summary=assessment.summary,
         possible_causes=[dict(description=h.description, support=h.support_level)
                          for h in assessment.hypotheses],

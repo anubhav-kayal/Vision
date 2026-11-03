@@ -78,6 +78,10 @@ def pilot_app(diagnostics, catalog, images, objects, token, indexer=None):
     def get_asset(asset_id: str):
         return catalog.require("assets", asset_id)
 
+    @app.put("/api/v1/assets/{asset_id}")
+    def update_asset(asset_id: str, value: RegisteredAsset):
+        return catalog.update_asset(asset_id, value)
+
     @app.post("/api/v1/documents", status_code=201)
     def document(value: DocumentRegistration):
         return catalog.create("documents", DocumentRecord(**value.model_dump()))
@@ -85,6 +89,10 @@ def pilot_app(diagnostics, catalog, images, objects, token, indexer=None):
     @app.get("/api/v1/documents/{revision_id}")
     def get_document(revision_id: str):
         return catalog.require("documents", revision_id)
+
+    @app.post("/api/v1/documents/{revision_id}/supersession")
+    def supersede(revision_id: str):
+        return catalog.supersede(revision_id)
 
     @app.put("/api/v1/documents/{revision_id}/content")
     async def content(revision_id: str, request: Request):

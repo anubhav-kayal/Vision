@@ -3,7 +3,7 @@
 from enum import StrEnum
 from typing import Protocol
 
-from pydantic import Field
+from pydantic import Field, model_validator
 
 from backend.app.models import Asset, DomainModel, KnowledgeDocument
 from ingestion.models import ParsedDocument
@@ -39,6 +39,17 @@ class DocumentRecord(DomainModel):
     status: ProcessingStatus = ProcessingStatus.UPLOADED
     failure_reason: str | None = None
     parsed: ParsedDocument | None = None
+
+    @model_validator(mode="after")
+    def validate_ready_content(self):
+        if self.status is ProcessingStatus.READY:
+            if not self.parsed or not self.parsed.pages or not self.parsed.chunks:
+                raise ValueError("ready documents require parsed pages and chunks")
+            if self.parsed.document != self.document or any(
+                chunk.document != self.document for chunk in self.parsed.chunks
+            ):
+                raise ValueError("parsed content must preserve document identity")
+        return self
 
 
 class CatalogRepository(Protocol):

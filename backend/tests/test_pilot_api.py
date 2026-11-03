@@ -2,7 +2,6 @@ import pymupdf
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.app.catalog import DocumentRecord
 from backend.app.diagnostics.playbooks import PILOT_FAULTS, Playbook
 from backend.app.image_workflow import ImageWorkflow, LocalObjectStore
 from backend.app.models import GroundedSource
@@ -10,7 +9,7 @@ from backend.app.persistence import Base, database
 from backend.app.pilot_api import pilot_app
 from backend.app.pilot_service import PilotDiagnostics
 from backend.app.sql_repositories import SqlDiagnosticSessionRepository
-from backend.tests.test_catalog import catalog
+from backend.tests.test_catalog import catalog  # noqa: F401 -- imported pytest fixture
 from backend.tests.test_image_workflow import png
 from backend.tests.test_catalog import record
 from backend.app.knowledge import IngestionService
