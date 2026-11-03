@@ -2,14 +2,14 @@
 
 import json
 import re
-from pydantic import Field
+from pydantic import Field, ValidationError
 
 from backend.app.diagnostics.models import (
     DiagnosticAssessment, DiagnosticModel, DiagnosticRetrievalLog, DiagnosticStatus,
     EvidenceRequest, Hypothesis, SafetyStatus, SupportLevel,
 )
 from backend.app.models import GroundedSource
-from backend.app.providers import ProviderFailure, validate_proposal
+from backend.app.providers import AssessmentDraft, ProviderFailure, validate_proposal
 
 PILOT_FAULTS = {
     "fails_to_start": ["fails to start", "will not start", "won't start"],
@@ -51,6 +51,8 @@ class PlaybookEngine:
         if not sources:
             return stop(DiagnosticStatus.INSUFFICIENT_KNOWLEDGE, "NO_APPLICABLE_EVIDENCE")
         problem = " ".join([reported_problem, *(s.description for s in symptoms or [])]).casefold()
+        if re.search(r"\b(bypass|rewire|disable interlock|open live|replace avr)\b", problem):
+            return stop(DiagnosticStatus.SAFETY_BLOCK, "RESTRICTED_WORK_REQUESTED")
         faults = [key for key, terms in PILOT_FAULTS.items()
                   if any(re.search(r"\b" + re.escape(term) + r"\b", problem) for term in terms)]
         if len(faults) != 1:
@@ -76,8 +78,9 @@ class PlaybookEngine:
                     problem=problem, observations=[o.model_dump(mode="json") for o in observations],
                     sources=[s.model_dump(mode="json") for s in sources],
                 )))
+                draft = AssessmentDraft.model_validate(draft)
                 validate_proposal(draft, sources, [o.observation_id for o in observations])
-            except ProviderFailure:
+            except (ProviderFailure, ValidationError, TypeError):
                 return stop(DiagnosticStatus.ESCALATE, "MODEL_UNAVAILABLE_OR_UNGROUNDED")
         request = playbook.evidence_request.model_copy(deep=True)
         if request.safety_status is SafetyStatus.SAFETY_BLOCK:

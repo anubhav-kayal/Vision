@@ -34,10 +34,24 @@ class PostgresChannel:
         from ingestion.models import DocumentChunk
         if not query.strip() or top_k <= 0:
             raise ValueError("invalid search")
+        from backend.app.catalog_service import CatalogService
+        from backend.app.models import AuthorityLevel
+        registered = self.catalog.get("assets", asset_context.asset_id) if asset_context else None
+        if not registered or registered.site_id != self.site_id:
+            return []
+        if any(getattr(asset_context, k) != getattr(registered.asset, k)
+               for k in ("manufacturer", "model", "revision", "equipment_family")):
+            return []
         eligible = [record for record in self.catalog.list("documents")
                     if record.site_id == self.site_id and record.status.value == "READY"
-                    and asset_context and asset_context.model and asset_context.revision
-                    and TfidfIndex._document_applies(record.document, asset_context)]
+                    and record.asset_id == asset_context.asset_id
+                    and CatalogService.applies(record, registered)
+                    and record.document.authority_level in {
+                        AuthorityLevel.SAFETY_INSTRUCTION, AuthorityLevel.OEM_SERVICE_MANUAL,
+                        AuthorityLevel.OEM_SERVICE_BULLETIN, AuthorityLevel.APPROVED_INTERNAL_SOP}]
+        identities = [(r.document.document_id, r.document.revision) for r in eligible]
+        if len(identities) != len(set(identities)):
+            return []
         ids = [record.id for record in eligible]
         if not ids:
             return []
