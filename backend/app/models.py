@@ -26,7 +26,32 @@ class DomainModel(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
 
-class Asset(DomainModel):
+class AssetStatus(StrEnum):
+    ASSET_CONFIRMED = "ASSET_CONFIRMED"
+    ASSET_UNCONFIRMED = "ASSET_UNCONFIRMED"
+    ASSET_MISMATCH = "ASSET_MISMATCH"
+    MODEL_UNKNOWN = "MODEL_UNKNOWN"
+    REVISION_UNKNOWN = "REVISION_UNKNOWN"
+
+
+class AssetIdentity(DomainModel):
+    """Reported component identity; confirmation records evidence, not authorization."""
+
+    engine_model: str | None = Field(default=None, min_length=1)
+    alternator_manufacturer: str | None = Field(default=None, min_length=1)
+    alternator_model: str | None = Field(default=None, min_length=1)
+    controller_model: str | None = Field(default=None, min_length=1)
+    asset_status: AssetStatus = AssetStatus.ASSET_UNCONFIRMED
+    identity_reference: str | None = Field(default=None, min_length=1)
+
+    @model_validator(mode="after")
+    def require_confirmation_reference(self) -> "AssetIdentity":
+        if self.asset_status is AssetStatus.ASSET_CONFIRMED and not self.identity_reference:
+            raise ValueError("confirmed identity requires an identity_reference")
+        return self
+
+
+class Asset(AssetIdentity):
     asset_id: str = Field(min_length=1)
     manufacturer: str = Field(min_length=1)
     family: str | None = None
@@ -50,7 +75,7 @@ class Asset(DomainModel):
         return self
 
 
-class AssetContext(DomainModel):
+class AssetContext(AssetIdentity):
     """Identity context used to constrain knowledge retrieval and diagnosis."""
 
     asset_id: str | None = None
@@ -73,6 +98,12 @@ class AssetContext(DomainModel):
             revision=asset.revision,
             serial_number=asset.serial_number,
             firmware_version=asset.firmware_version,
+            engine_model=asset.engine_model,
+            alternator_manufacturer=asset.alternator_manufacturer,
+            alternator_model=asset.alternator_model,
+            controller_model=asset.controller_model,
+            asset_status=asset.asset_status,
+            identity_reference=asset.identity_reference,
             configuration=asset.configuration,
             metadata=asset.metadata,
         )
