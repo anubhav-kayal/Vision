@@ -2,6 +2,7 @@
 
 from sqlalchemy import select
 from uuid import uuid4
+from time import time_ns
 
 from backend.app.catalog import MODELS
 from backend.app.diagnostics.models import DiagnosticAssessment, DiagnosticSession
@@ -67,11 +68,12 @@ class SqlDiagnosticSessionRepository(DiagnosticSessionRepository):
         with self.sessions.begin() as session:
             session.merge(SessionRow(id=value.session_id, payload=value.model_dump(mode="json")))
             session.flush()
-            session.add(AssessmentRow(id=uuid4().hex, session_id=value.session_id,
+            session.add(AssessmentRow(id=f"{time_ns():020d}-{uuid4().hex}", session_id=value.session_id,
                 payload=assessment.model_dump(mode="json")))
         return value.model_copy(deep=True)
 
     def history(self, session_id):
         with self.sessions() as session:
-            rows = session.scalars(select(AssessmentRow).where(AssessmentRow.session_id == session_id))
+            rows = session.scalars(select(AssessmentRow).where(
+                AssessmentRow.session_id == session_id).order_by(AssessmentRow.id))
             return [DiagnosticAssessment.model_validate(row.payload) for row in rows]

@@ -1,4 +1,5 @@
 from backend.app.diagnostics.application import DiagnosticApplicationService
+from backend.app.diagnostics.models import Observation
 from backend.app.persistence import Base, database
 from backend.app.sql_repositories import SqlDiagnosticSessionRepository
 from backend.tests.test_diagnostic_application import make_asset
@@ -17,3 +18,8 @@ def test_sql_history_persists_complete_retrieval_log(tmp_path):
     assert history == [assessment]
     assert history[0].retrieval.retrieved_chunk_ids
     assert history[0].sources
+    _, second = service.add_observation("history", Observation(
+        observation_id="measurement", type="measurement", parameter="discharge_temperature",
+        value=108, unit="C", source="test fixture",
+    ))
+    assert repository.history("history") == [assessment, second]
