@@ -49,6 +49,13 @@ class EvidenceRow(Base):
     payload: Mapped[dict] = mapped_column(JSON)
 
 
+class AssessmentRow(Base):
+    __tablename__ = "diagnostic_assessments"
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    session_id: Mapped[str] = mapped_column(ForeignKey("diagnostic_sessions.id"), index=True)
+    payload: Mapped[dict] = mapped_column(JSON)
+
+
 def database(url: str):
     engine = create_engine(url)
     if engine.dialect.name == "sqlite":

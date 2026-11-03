@@ -62,6 +62,11 @@ def pilot_app(diagnostics, catalog, images, objects, token, indexer=None):
     def organization(value: Organization):
         return catalog.create("organizations", value)
 
+    @app.get("/api/v1/diagnostic-sessions/{session_id}/history")
+    def history(session_id: str):
+        diagnostics.get_session(session_id)
+        return diagnostics._repository.history(session_id)
+
     @app.post("/api/v1/sites", status_code=201)
     def site(value: Site):
         return catalog.create("sites", value)

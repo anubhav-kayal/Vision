@@ -1,5 +1,7 @@
 """Pilot application wiring binds each investigation to the registered asset."""
 
+from threading import RLock
+
 from backend.app.corpus import ApplicableCorpus
 from backend.app.diagnostics.application import DiagnosticApplicationService
 from backend.app.diagnostics.models import VerificationStatus
@@ -21,9 +23,14 @@ class CatalogEngine:
 class PilotDiagnostics(DiagnosticApplicationService):
     def __init__(self, catalog, repository, playbooks=(), provider=None, channel_factory=None):
         self.catalog = catalog
+        self._lock = RLock()
         super().__init__(CatalogEngine(catalog, playbooks, provider, channel_factory), repository)
 
     def create_session(self, *, session_id, asset, reported_problem, symptoms=None):
+        with self._lock:
+            return self._create(session_id, asset, reported_problem, symptoms)
+
+    def _create(self, session_id, asset, reported_problem, symptoms):
         if self._repository.get(session_id):
             raise ValueError("duplicate session identifier")
         registered = self.catalog.require("assets", asset.asset_id).asset
@@ -35,7 +42,8 @@ class PilotDiagnostics(DiagnosticApplicationService):
     def add_observation(self, session_id, observation):
         if observation.verification_status is VerificationStatus.VERIFIED:
             raise ValueError("verification requires a qualified review workflow")
-        return super().add_observation(session_id, observation)
+        with self._lock:
+            return super().add_observation(session_id, observation)
 
 
 def technician_response(session, assessment):

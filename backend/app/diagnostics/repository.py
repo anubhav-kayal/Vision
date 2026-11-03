@@ -20,10 +20,24 @@ class DiagnosticSessionRepository(ABC):
     def get(self, session_id: str) -> DiagnosticSession | None:
         raise NotImplementedError
 
+    def save_assessment(self, session, assessment):
+        return self.save(session)
+
+    def history(self, session_id):
+        return []
+
 
 class InMemoryDiagnosticSessionRepository(DiagnosticSessionRepository):
     def __init__(self) -> None:
         self._sessions: dict[str, DiagnosticSession] = {}
+        self._history = {}
+
+    def save_assessment(self, session, assessment):
+        self._history.setdefault(session.session_id, []).append(assessment.model_copy(deep=True))
+        return self.save(session)
+
+    def history(self, session_id):
+        return [item.model_copy(deep=True) for item in self._history.get(session_id, [])]
 
     def save(self, session: DiagnosticSession) -> DiagnosticSession:
         self._sessions[session.session_id] = session.model_copy(deep=True)

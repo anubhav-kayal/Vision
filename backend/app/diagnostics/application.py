@@ -53,4 +53,4 @@ class DiagnosticApplicationService:
         self, session: DiagnosticSession
     ) -> tuple[DiagnosticSession, DiagnosticAssessment]:
         updated, assessment = self._sessions.assess(session)
-        return self._repository.save(updated), assessment
+        return self._repository.save_assessment(updated, assessment), assessment

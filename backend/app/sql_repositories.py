@@ -1,11 +1,12 @@
 """SQL repositories keep validated domain payloads separate from relational keys."""
 
 from sqlalchemy import select
+from uuid import uuid4
 
 from backend.app.catalog import MODELS
-from backend.app.diagnostics.models import DiagnosticSession
+from backend.app.diagnostics.models import DiagnosticAssessment, DiagnosticSession
 from backend.app.diagnostics.repository import DiagnosticSessionRepository
-from backend.app.persistence import AssetRow, DocumentRow, OrganizationRow, SessionRow, SiteRow
+from backend.app.persistence import AssessmentRow, AssetRow, DocumentRow, OrganizationRow, SessionRow, SiteRow
 
 TABLES = {"organizations": OrganizationRow, "sites": SiteRow,
           "assets": AssetRow, "documents": DocumentRow}
@@ -61,3 +62,16 @@ class SqlDiagnosticSessionRepository(DiagnosticSessionRepository):
         with self.sessions() as session:
             row = session.get(SessionRow, session_id)
             return DiagnosticSession.model_validate(row.payload) if row else None
+
+    def save_assessment(self, value, assessment):
+        with self.sessions.begin() as session:
+            session.merge(SessionRow(id=value.session_id, payload=value.model_dump(mode="json")))
+            session.flush()
+            session.add(AssessmentRow(id=uuid4().hex, session_id=value.session_id,
+                payload=assessment.model_dump(mode="json")))
+        return value.model_copy(deep=True)
+
+    def history(self, session_id):
+        with self.sessions() as session:
+            rows = session.scalars(select(AssessmentRow).where(AssessmentRow.session_id == session_id))
+            return [DiagnosticAssessment.model_validate(row.payload) for row in rows]
