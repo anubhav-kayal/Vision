@@ -10,6 +10,11 @@ dist/
 build/
 *.egg-info/
 .env
+.env.*
+!.env.example
+.runtime/
+pilot.db
+._*
 evaluation/results/
 sample_data/raw/
 sample_data/parsed/*.full.json
