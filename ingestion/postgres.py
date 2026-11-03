@@ -91,3 +91,20 @@ def index_document(sessions, record, embeddings=None):
                                       body=chunk.text, payload=chunk.model_dump(mode="json")))
             if vectors is not None:
                 session.merge(ChunkEmbedding(id=key, model=embeddings.model, embedding=vectors[i]))
+
+
+def enable_vector_storage(engine):
+    """Explicit optional schema provisioning, including databases migrated without vectors."""
+    if engine.dialect.name != "postgresql":
+        raise ValueError("vector storage requires PostgreSQL")
+    with engine.begin() as connection:
+        connection.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+        ChunkEmbedding.__table__.create(connection, checkfirst=True)
+
+
+if __name__ == "__main__":
+    import os
+    from backend.app.persistence import database
+    engine, _ = database(os.environ["VISION_DATABASE_URL"])
+    enable_vector_storage(engine)
+    print("Vector storage is ready. Reingest/index approved documents to populate embeddings.")

@@ -12,6 +12,10 @@ class IngestionService:
         self.catalog, self.parser = catalog, parser
 
     def ingest(self, revision_id, path):
+        with self.catalog._lock:
+            return self._ingest(revision_id, path)
+
+    def _ingest(self, revision_id, path):
         record = self.catalog.require("documents", revision_id)
         if record.status is not ProcessingStatus.UPLOADED:
             raise ValueError("only newly uploaded documents can be ingested")

@@ -2,11 +2,13 @@
 
 from backend.app.catalog import CatalogRepository, DocumentRecord, RegisteredAsset
 from backend.app.models import AssetStatus
+from threading import RLock
 
 
 class CatalogService:
     def __init__(self, repository: CatalogRepository):
         self.repository = repository
+        self._lock = RLock()
 
     def require(self, kind, identifier):
         value = self.repository.get(kind, identifier)
@@ -15,6 +17,10 @@ class CatalogService:
         return value
 
     def create(self, kind, value):
+        with self._lock:
+            return self._create(kind, value)
+
+    def _create(self, kind, value):
         identifier = value.asset.asset_id if kind == "assets" else value.id
         if self.repository.get(kind, identifier):
             raise ValueError(f"duplicate {kind}: {identifier}")
@@ -46,6 +52,10 @@ class CatalogService:
                    for key in ("manufacturer", "equipment_family", "model", "revision"))
 
     def update_asset(self, identifier, value):
+        with self._lock:
+            return self._update_asset(identifier, value)
+
+    def _update_asset(self, identifier, value):
         existing = self.require("assets", identifier)
         if value.asset.asset_id != identifier or value.site_id != existing.site_id:
             raise ValueError("asset ID and site cannot be changed")
@@ -55,6 +65,10 @@ class CatalogService:
         return value
 
     def supersede(self, identifier):
+        with self._lock:
+            return self._supersede(identifier)
+
+    def _supersede(self, identifier):
         from backend.app.catalog import ProcessingStatus
         record = self.require("documents", identifier)
         if record.status is not ProcessingStatus.READY:
