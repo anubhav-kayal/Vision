@@ -901,4 +901,27 @@ This migration document cannot confirm:
 - Whether the existing `.venv` remains usable after migration.
 - Any production credentials, secrets, cloud configuration, or deployment setup.
 
+## 12. Local pilot implementation checkpoint — 2026-11-03
+
+The two-week backend plan is now implemented as a local advisory pilot. The
+repository includes SQL catalog/session/history repositories, migrations, PDF
+ingestion, exact applicable corpus filtering, hybrid retrieval, PostgreSQL/pgvector
+channels, structured provider adapters, image evidence/confirmation, generator
+playbook routing, authenticated pilot routes, a runtime factory, and a check script.
+
+The configured regression run passed 142 tests including real PostgreSQL/vector
+integration. The latest run after the ordering fix passed 141 with the opt-in
+database case skipped after cleanup. All three evaluation runners and compilation
+passed; Week 1's four known failures remain. New generator cases are synthetic.
+
+No authorized generator manual, domain-approved generator playbook, or live API
+credential was available. Model quality and real generator accuracy remain
+unmeasured. No machine control or repair execution was introduced.
+
+This SSD cannot reliably host raw SQLite/PostgreSQL data files. An SSD-backed APFS
+image at `.runtime/pilot-data.sparseimage`, mounted at `/Volumes/VisionPilotData`,
+provides stable database storage. Read `docs/pilot-runbook.md` before running.
+Full results and release gates are in `docs/two-week-implementation-report.md`.
+Do not infer production readiness or completed domain acceptance from this work.
+
 Treat these as verification tasks in Codex CLI rather than assumed facts.

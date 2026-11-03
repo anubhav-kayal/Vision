@@ -193,3 +193,16 @@ agent, or tool names, and do not add co-author tags.
 PLC/SCADA/control integration, automatic repair execution, native mobile apps,
 predictive maintenance, multi-industry support, custom model training, and any
 claim that the system is production-safe.
+
+## Implementation checkpoint
+
+The ten-day backend slice has been implemented. See
+[the implementation report](two-week-implementation-report.md) for exact tests,
+limitations, and outstanding acceptance gates, and
+[the runbook](pilot-runbook.md) to run the local product.
+
+Days 4–6 still require a live embedding/model benchmark. Day 8 has a working
+playbook framework and synthetic fault tests; real generator diagnostic content
+requires authorized source material and domain approval. Day 10 factory/operator
+acceptance remains pending. Software completion must not be represented as
+validated industrial accuracy or production safety.
