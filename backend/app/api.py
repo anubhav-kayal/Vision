@@ -69,7 +69,7 @@ def create_app(service: DiagnosticApplicationService) -> FastAPI:
         return {"status": "ok", "service": "diagnostic-api"}
 
     @app.post("/api/v1/diagnostic-sessions", response_model=DiagnosticAssessmentResponse, status_code=201)
-    async def create_session(payload: CreateDiagnosticSessionRequest) -> DiagnosticAssessmentResponse:
+    def create_session(payload: CreateDiagnosticSessionRequest) -> DiagnosticAssessmentResponse:
         session, assessment = service.create_session(
             session_id=payload.session_id,
             asset=payload.asset,
@@ -79,14 +79,14 @@ def create_app(service: DiagnosticApplicationService) -> FastAPI:
         return _response(session, assessment)
 
     @app.get("/api/v1/diagnostic-sessions/{session_id}", response_model=DiagnosticSession)
-    async def get_session(session_id: str) -> DiagnosticSession:
+    def get_session(session_id: str) -> DiagnosticSession:
         return service.get_session(session_id)
 
     @app.post(
         "/api/v1/diagnostic-sessions/{session_id}/observations",
         response_model=DiagnosticAssessmentResponse,
     )
-    async def add_observation(session_id: str, observation: Observation) -> DiagnosticAssessmentResponse:
+    def add_observation(session_id: str, observation: Observation) -> DiagnosticAssessmentResponse:
         session, assessment = service.add_observation(session_id, observation)
         return _response(session, assessment)
 

@@ -41,6 +41,7 @@ class VisualObservationDraft(DiagnosticModel):
     verification_status: Literal[VerificationStatus.UNVERIFIED] = VerificationStatus.UNVERIFIED
     requires_confirmation: Literal[True] = True
     confidence: ConfidenceLevel | None = None
+    image_quality: Literal["usable", "unclear", "unreadable"] = "unclear"
 
     @field_validator("requires_confirmation", mode="before")
     @classmethod

@@ -10,7 +10,6 @@ from starlette.concurrency import run_in_threadpool
 
 from backend.app.api import create_app
 from backend.app.catalog import DocumentRecord, Organization, RegisteredAsset, Site
-from backend.app.diagnostics.evidence import VisualObservationDraft
 from backend.app.image_workflow import MAX_IMAGE_BYTES
 from backend.app.knowledge import IngestionService
 from backend.app.models import DomainModel, KnowledgeDocument
@@ -33,9 +32,9 @@ class Confirmation(DomainModel):
 async def bounded_body(request, limit):
     data = bytearray()
     async for chunk in request.stream():
-        data.extend(chunk)
-        if len(data) > limit:
+        if len(data) + len(chunk) > limit:
             raise ValueError("upload exceeds size limit")
+        data.extend(chunk)
     return bytes(data)
 
 

@@ -67,13 +67,15 @@ class ImageWorkflow:
                 draft = VisualObservationDraft.model_validate(draft.model_dump())
                 if draft.evidence_id != key:
                     raise ProviderFailure("IMAGE_REFERENCE_MISMATCH")
-                reason = "CONFIRM_OBSERVATION"
+                reason = "CONFIRM_OBSERVATION" if (
+                    draft.image_quality == "usable" and draft.confidence != "LOW"
+                ) else "CLEARER_IMAGE_REQUIRED"
             except ProviderFailure:
                 reason = "VISION_UNAVAILABLE_OR_INVALID"
         self.store.put(key, data)
         payload = dict(metadata=metadata.model_dump(mode="json"),
                        draft=draft.model_dump(mode="json") if draft else None,
-                       reason=reason, confirmed=False)
+                       reason=reason, status="NEED_EVIDENCE", confirmed=False)
         with self.sessions.begin() as db:
             db.add(EvidenceRow(id=key, session_id=session_id, payload=payload))
         return payload
