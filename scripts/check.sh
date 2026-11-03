@@ -11,7 +11,7 @@ find backend ingestion evaluation migrations -type f -name '._*.py' -exec sh -c 
 ' sh {} +
 mkdir -p .runtime
 python_bin="${VISION_PYTHON:-.venv/bin/python}"
-PYTHONPATH=. "$python_bin" -m pytest --basetemp=.runtime/pytest -q
+PYTHONPATH=. "$python_bin" -m pytest --basetemp="${VISION_TEST_TMP:-.runtime/pytest}" -q
 PYTHONPATH=. "$python_bin" -m evaluation.run --top-k 5
 PYTHONPATH=. "$python_bin" -m evaluation.diagnostic_run
 PYTHONPATH=. "$python_bin" -m evaluation.pilot_run

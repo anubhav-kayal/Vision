@@ -4,13 +4,29 @@
 
 Run from the external SSD checkout with Python 3.12 or newer:
 
+On this Mac the SSD needs an APFS image for database files. Its backing file
+stays in the SSD checkout; macOS exposes it at `/Volumes/VisionPilotData`.
+The image was created during implementation. After reboot, attach it again:
+
+```bash
+cd '/Volumes/Anubhav SSD/Vision'
+# Create only if the backing file does not already exist:
+# hdiutil create -size 512m -fs APFS -type SPARSE -volname VisionPilotData .runtime/pilot-data.sparseimage
+hdiutil attach .runtime/pilot-data.sparseimage -nobrowse
+mkdir -p /Volumes/VisionPilotData/vision
+export VISION_DATA_DIR=/Volumes/VisionPilotData/vision
+export VISION_DATABASE_URL=sqlite:////Volumes/VisionPilotData/vision/pilot.db
+export VISION_TEST_TMP=/Volumes/VisionPilotData/vision/pytest
+```
+
+Then install dependencies and start the service:
+
 ```bash
 cd '/Volumes/Anubhav SSD/Vision'
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 mkdir -p .runtime
-export VISION_DATABASE_URL='sqlite:///.runtime/pilot.db'
-export VISION_DATA_DIR='.runtime'
+# On a filesystem with stable file identity, .runtime can be used directly instead.
 export VISION_API_TOKEN="$(python -c 'import secrets; print(secrets.token_urlsafe(32))')"
 python -m alembic upgrade head
 python -m uvicorn backend.app.runtime:create_runtime --factory --host 127.0.0.1 --port 8000
@@ -107,9 +123,10 @@ administrative call to `index_document`; they are not automatically reindexed.
 Fusion uses lexical eligibility plus vector ranking and preserves citations.
 Semantic-only matches are deliberately excluded pending domain evaluation.
 
-Do not place native PostgreSQL data files directly on this SSD filesystem: an
-attempt failed due to AppleDouble sidecars during initialization. Use a compatible
-PostgreSQL host. Integration tests were run in an ephemeral RAM-backed container.
+Do not place SQLite or native PostgreSQL data files directly on this SSD filesystem: an
+attempt failed due to AppleDouble sidecars during initialization, and SQLite reported
+`SQLITE_READONLY_DBMOVED`. Use the SSD-backed APFS image or a compatible PostgreSQL
+host. PostgreSQL integration tests were run in an ephemeral RAM-backed container.
 
 ## Checks
 
@@ -120,6 +137,22 @@ sh scripts/check.sh
 To opt into the database integration test, export `VISION_TEST_DATABASE_URL` for a
 dedicated disposable database. This test runs migrations and inserts synthetic
 records; never point it at a production database.
+
+An optional disposable container matching the tested setup can be started with:
+
+```bash
+docker run --rm -d --name vision-pilot-check \
+  --tmpfs /var/lib/postgresql/data:rw,size=512m \
+  -e POSTGRES_PASSWORD=vision-local-test-only -e POSTGRES_DB=vision_pilot_test \
+  -p 127.0.0.1:55440:5432 pgvector/pgvector:pg17
+docker exec vision-pilot-check pg_isready -U postgres -d vision_pilot_test
+export VISION_TEST_DATABASE_URL='postgresql+psycopg://postgres:vision-local-test-only@127.0.0.1:55440/vision_pilot_test'
+sh scripts/check.sh
+docker stop vision-pilot-check
+```
+
+Wait until `pg_isready` reports accepting connections before running checks.
+The database is disposable; stopping the container discards its synthetic data.
 
 The script removes only identified generated AppleDouble Python sidecars and runs
 tests, all three evaluations, compilation, and whitespace validation. Week 1 still
