@@ -45,12 +45,30 @@ def pilot_app(diagnostics, catalog, images, objects, token, indexer=None):
 
     @app.middleware("http")
     async def authenticate(request, call_next):
-        if request.url.path != "/health" and not hmac.compare_digest(
+        if request.url.path not in {"/health", "/docs", "/openapi.json", "/redoc"} and not hmac.compare_digest(
             request.headers.get("authorization", ""), f"Bearer {token}",
         ):
             return JSONResponse(status_code=401, media_type="application/problem+json",
                                 content=dict(title="Unauthorized", status=401, detail="Bearer token required"))
         return await call_next(request)
+
+    original_openapi = app.openapi
+
+    def openapi():
+        schema = original_openapi()
+        schema.setdefault("components", {}).setdefault("securitySchemes", {})["PilotToken"] = {
+            "type": "http", "scheme": "bearer",
+        }
+        schema["security"] = [{"PilotToken": []}]
+        schema["paths"]["/health"]["get"]["security"] = []
+        return schema
+
+    app.openapi = openapi
+
+    @app.exception_handler(KeyError)
+    async def missing(_, exc):
+        return JSONResponse(status_code=404, media_type="application/problem+json",
+                            content=dict(title="Resource not found", status=404, detail=str(exc).strip("'")))
 
     @app.exception_handler(ValueError)
     async def invalid(_, exc):
